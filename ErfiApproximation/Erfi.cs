@@ -20,6 +20,27 @@ namespace ErfiApproximation {
             return y;
         }
 
+        public static (MultiPrecision<N>, int k) Limit(MultiPrecision<N> x, int max_terms = 1024) {
+            MultiPrecision<N> v = 1 / x;
+            MultiPrecision<N> w = v * v;
+
+            MultiPrecision<N> s = 0, u = v;
+
+            for (int k = 0; k <= max_terms; k++) {
+                s += u;
+                u *= w * (2 * k + 1) / 2;
+
+                if (u.Exponent < s.Exponent - MultiPrecision<N>.Bits) {
+                    return (2 / s, k);
+                }
+                if (u >= 1) {
+                    return (MultiPrecision<N>.NaN, int.MaxValue);
+                }
+            }
+
+            return (MultiPrecision<N>.NaN, int.MaxValue);
+        }
+
         public static MultiPrecision<N> Value(MultiPrecision<N> x, int m) {
             MultiPrecision<N> c = Cfrac(x, m);
 
@@ -28,7 +49,7 @@ namespace ErfiApproximation {
             return y;
         }
 
-        public static (MultiPrecision<N> y, int m) Convergence(MultiPrecision<N> x, int max_m = 1024, int convchecks = 4) {
+        public static (MultiPrecision<N> y, int m) CfracConvergence(MultiPrecision<N> x, int max_m = 1024, int convchecks = 4) {
             MultiPrecision<N> prev_y = Cfrac(x, 0);
             
             for (int m = 1, convtimes = 0; m <= max_m; m++) {
