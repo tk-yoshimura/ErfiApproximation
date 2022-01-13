@@ -2,7 +2,7 @@
 
 namespace ErfiApproximation {
     public static class Erfi<N> where N : struct, IConstant {
-        public static MultiPrecision<N> Cfrac(MultiPrecision<N> x, int m){
+        public static MultiPrecision<N> Cfrac(MultiPrecision<N> x, int m) {
             if (x.IsZero) {
                 return MultiPrecision<N>.Zero;
             }
@@ -34,11 +34,11 @@ namespace ErfiApproximation {
                     return (2 / s, k);
                 }
                 if (u >= 1) {
-                    return (MultiPrecision<N>.NaN, int.MaxValue);
+                    return (MultiPrecision<N>.NaN, -1);
                 }
             }
 
-            return (MultiPrecision<N>.NaN, int.MaxValue);
+            return (MultiPrecision<N>.NaN, -1);
         }
 
         public static MultiPrecision<N> Value(MultiPrecision<N> x, int m) {
@@ -49,9 +49,9 @@ namespace ErfiApproximation {
             return y;
         }
 
-        public static (MultiPrecision<N> y, int m) CfracConvergence(MultiPrecision<N> x, int max_m = 1024, int convchecks = 4) {
+        public static (MultiPrecision<N> y, int m) CfracConvergence(MultiPrecision<N> x, int max_m = 4096, int convchecks = 4) {
             MultiPrecision<N> prev_y = Cfrac(x, 0);
-            
+
             for (int m = 1, convtimes = 0; m <= max_m; m++) {
                 MultiPrecision<N> y = Cfrac(x, m);
 

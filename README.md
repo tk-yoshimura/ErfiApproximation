@@ -28,3 +28,5 @@ Imaginary Error function
 
 ![erfi approx1](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/figures/erfi_approx1.svg)  
 ![erfi approx2](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/figures/erfi_approx2.svg)
+
+[NumericTable(128bits)](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/results/erfi_convergence_n4.csv)  
