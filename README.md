@@ -12,13 +12,13 @@ Imaginary Error function
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/results/erfi_table_n4.csv)  
 
-## Series
-
-![erfi nz](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/figures/erfi_nz.svg)
-
 ## Limit
 
 ![erfi limit](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/figures/erfi_limit.svg)
+
+## Series
+
+![erfi nz](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/figures/erfi_nz.svg)
 
 ## Continued Fraction
 
