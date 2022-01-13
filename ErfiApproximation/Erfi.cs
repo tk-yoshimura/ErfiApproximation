@@ -20,7 +20,7 @@ namespace ErfiApproximation {
             return y;
         }
 
-        public static (MultiPrecision<N>, int k) Limit(MultiPrecision<N> x, int max_terms = 1024) {
+        public static (MultiPrecision<N> y, int k) Limit(MultiPrecision<N> x, int max_terms = 1024) {
             MultiPrecision<N> v = 1 / x;
             MultiPrecision<N> w = v * v;
 
