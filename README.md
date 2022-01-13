@@ -30,3 +30,4 @@ Imaginary Error function
 ![erfi approx2](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/figures/erfi_approx2.svg)
 
 [NumericTable(128bits)](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/results/erfi_convergence_n4.csv)  
+[NumericTable(256bits)](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/results/erfi_convergence_n8.csv)  

@@ -5,16 +5,24 @@ using System.IO;
 namespace ErfiApproximation {
     internal class Program {
         static void Main(string[] args) {
-            using (StreamWriter sw = new("../../../../results_disused/erfi_convergence_n32.csv")) {
-                sw.WriteLine("x,c(x),c.frac m,limit k");
+            using (StreamWriter sw = new("../../../../results_disused/erfi_value_check.csv")) {
+                for (double x = 1d / 64; x <= 64; x += 1d / 64) {
+                    MultiPrecision<Pow2.N4> y4 = ErfiN4.C(x);
+                    MultiPrecision<Pow2.N8> y8 = ErfiN8.C(x);
+                    MultiPrecision<Pow2.N16> y16 = ErfiN16.C(x);
+                    MultiPrecision<Pow2.N32> y32 = ErfiN32.C(x);
 
-                for (MultiPrecision<Pow2.N32> x = 1d / 2; x <= 64; x += 1d / 2) {
-                    (MultiPrecision<Pow2.N32> f, int m) = Erfi<Pow2.N32>.CfracConvergence(x);
-                    (MultiPrecision<Pow2.N32> l, int k) = Erfi<Pow2.N32>.Limit(x);
+                    Console.WriteLine(x);
+                    Console.WriteLine(y4);
+                    Console.WriteLine(y8);
+                    Console.WriteLine(y16);
+                    Console.WriteLine(y32);
 
-                    Console.WriteLine($"{x}\n{f}\n{l}");
-
-                    sw.WriteLine($"{x},{f},{m},{((k >= 0) ? k.ToString() : "N/A")}");
+                    sw.WriteLine(x);
+                    sw.WriteLine(y4);
+                    sw.WriteLine(y8);
+                    sw.WriteLine(y16);
+                    sw.WriteLine(y32);
                 }
             }
 
