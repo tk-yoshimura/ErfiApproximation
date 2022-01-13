@@ -1,0 +1,29 @@
+\begin{eqnarray*}
+  \mathrm{erfi}(x)&=& - i \mathrm{erf}(i x) \\
+                  &=& \frac{2}{\sqrt{\pi}} \int_{0}^{x} \exp(t^2) dt \\
+                  &=& \frac{2}{\sqrt{\pi}} \exp(x^2) D_{+}(x) ~~~~D_{+}(x): \text{Dawson function}\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{erfi}(x)&=& \frac{2 x}{\sqrt{\pi}} \exp(x^2) 
+  \frac{1}{1+\dfrac{2 x^2}
+             {3-\dfrac{4 x^2}
+                {5+\dfrac{6 x^2}
+                    {7-\dfrac{8 x^2}{\ddots}}}}}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{erfi}(x)&=& \exp(x^2) \left( \frac{1}{\sqrt{\pi} x} + \frac{1}{2 \sqrt{\pi} x^3}
+   + \frac{3}{4 \sqrt{\pi} x^5} + \frac{15}{8 \sqrt{\pi} x^7}
+   + \frac{105}{16 \sqrt{\pi} x^9} + \cdots + \frac{c_k}{\sqrt{\pi} x^{2k+1}} + \cdots \right)
+   \\&& c_0 = 1, ~~ c_k = c_{k-1} \frac{2k - 1}{2}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  \mathrm{erfi}(x)&=& \frac{2}{\sqrt{\pi}} \sum_{k=0}^{\infty} \frac{x^{2k+1}}{(2k+1) k!} \\
+                  &=& \frac{\exp(x^2)}{\sqrt{\pi}} \sum_{k=1}^{\infty} \frac{(-1)^{k+1} x^{2k-1}}{c_k}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  c(x)&:=& \frac{2}{\sqrt{\pi}} \frac{\exp(x^2)}{\mathrm{erfi(x)}} 
+\end{eqnarray*}
