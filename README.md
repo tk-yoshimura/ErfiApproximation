@@ -10,7 +10,7 @@ Imaginary Error function
 
 ## Table
 
-[NumericTable(128bits)](https://github.com/tk-yoshimura/ExpIntegralApproximation/blob/main/results/erfi_table_n4.csv)  
+[NumericTable(128bits)](https://github.com/tk-yoshimura/ErfiApproximation/blob/main/results/erfi_table_n4.csv)  
 
 ## Series
 
