@@ -7,7 +7,7 @@ namespace ErfiApproximation {
                 return -C(-x);
             }
 
-            if (x.IsZero) {
+            if (MultiPrecision<Pow2.N8>.IsZero(x)) {
                 return MultiPrecision<Pow2.N8>.PositiveInfinity;
             }
 

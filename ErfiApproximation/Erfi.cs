@@ -3,7 +3,7 @@
 namespace ErfiApproximation {
     public static class Erfi<N> where N : struct, IConstant {
         public static MultiPrecision<N> Cfrac(MultiPrecision<N> x, int m) {
-            if (x.IsZero) {
+            if (MultiPrecision<N>.IsZero(x)) {
                 return MultiPrecision<N>.Zero;
             }
 
@@ -57,7 +57,7 @@ namespace ErfiApproximation {
 
                 MultiPrecision<N> err = y - prev_y;
 
-                if (err.IsZero || err.Exponent <= y.Exponent - MultiPrecision<N>.Bits + 1) {
+                if (MultiPrecision<N>.IsZero(err) || err.Exponent <= y.Exponent - MultiPrecision<N>.Bits + 1) {
                     convtimes++;
                 }
                 else {
